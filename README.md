@@ -7,6 +7,7 @@ Select plugin for VueJS
 
 ## Table of contents
 
+- [Demo](http://flatelect.garazha.xyz)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Example](#example)
@@ -104,71 +105,18 @@ import { Test } from 'flatelect/src'
 Vue.component('test', Test)
 ```
 
-**⚠️ You need to configure your bundler to compile `.vue` files.** More info [in the official documentation](https://vuejs.org/v2/guide/single-file-components.html).
-
 # Usage
 
-> TODO
-
-# Example
-
-> TODO
-
----
-
-# Plugin Development
-
-## Installation
-
-The first time you create or clone your plugin, you need to install the default dependencies:
-
-```
-npm install
-```
-
-## Watch and compile
-
-This will run webpack in watching mode and output the compiled files in the `dist` folder.
-
-```
-npm run dev
-```
-
-## Use it in another project
-
-While developping, you can follow the install instructions of your plugin and link it into the project that uses it.
-
-In the plugin folder:
-
-```
-npm link
-```
-
-In the other project folder:
-
-```
-npm link flatelect
-```
-
-This will install it in the dependencies as a symlink, so that it gets any modifications made to the plugin.
-
-## Publish to npm
-
-You may have to login to npm before, with `npm adduser`. The plugin will be built in production mode before getting published on npm.
-
-```
-npm publish
-```
-
-## Manual build
-
-This will build the plugin into the `dist` folder in production mode.
-
-```
-npm run build
-```
-
----
+  <flatelect
+    :options="options" //options to display
+    :size="compact" //or full
+    :fancy="true" //transulcent & soft shadow dropdown.
+    :required="false" //validation purposes
+    :objKey="name" //if options consist of objects, provide here the key which will be used to display the option.
+    :custom="false" //if you want to render something else instead of option name, then use slot tag and write your own markup!
+    v-on:selected="handleSelection" //callback method when user has made the selection.
+    >
+  </flatelect>
 
 ## License
 
