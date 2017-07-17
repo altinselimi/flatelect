@@ -1,0 +1,24 @@
+<div :class="[{'dropdownOn' : !!dropdown, 'fancy': !!fancy}, size]" id="select-wrapper" @mouseleave="close()" @keydown="keymonitor">
+    <div class="select-filter" @click="focusInput()">
+        <input ref="searchInput" @focus="focusInput()" :placeholder="description" type="text" v-model="inputValue" v-show="!noInput" @keyup="searching()" :required="required" />
+    </div>
+    <span class="icon-wrapper" @click="focusInput('icon')">
+        <span class="down" :class="{'moveup': !!dropdown}"><div class="box"></div></span>
+        <span class="x" v-if="!!dropdown"><div class="box"></div></span>
+    </span>
+    <div id="options" v-if="!!dropdown && !!options">
+        <ul v-if="options.length > 0">
+            <li @click="select(option)" v-for="(option, index) in filteredOptions" :id="'option' + index">
+                <p :class="{'heading': option == option.toUpperCase(), 'keyboardHover': option === keyboardSelection}">
+                    <span v-if="custom === false">
+                        {{option}}
+                    </span>
+                    <span v-else>
+                        <slot></slot>
+                    </span>
+                </p>
+            </li>
+        </ul>
+        <ul v-else><p>There are no options to be shown.</p></ul>
+    </div>
+</div>
