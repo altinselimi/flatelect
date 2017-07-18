@@ -1,7 +1,7 @@
 {
   "name": "flatelect",
   "description": "Select plugin for VueJS",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "altinselimi <altinselimi@msn.com>",
   "keywords": [
     "vue",
