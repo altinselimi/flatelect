@@ -1,4 +1,4 @@
-import flatelect from './flatelect/flatelect.vue'
+import Flatelect from './flatelect/flatelect.vue'
 
 function plugin (Vue) {
   Vue.component('flatelect', Flatelect)
