@@ -97,7 +97,7 @@
     width: 100%;
     position: absolute;
     left: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     top: 100%;
     background-color: white;
@@ -153,4 +153,14 @@
       overflow-x: hidden;
     }
   }
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(black, .06);
+    border-radius:5px;
 }
