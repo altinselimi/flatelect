@@ -9,7 +9,7 @@
     <div id="options" v-if="!!dropdown && !!options">
         <ul v-if="options.length > 0">
             <li @click="select(option)" v-for="(option, index) in filteredOptions" :id="'option' + index">
-                <p :class="{'heading': typeof b === 'string' && option == option.toUpperCase(), 'keyboardHover': option === keyboardSelection}">
+                <p :class="{'heading': typeof option === 'string' && option == option.toUpperCase(), 'keyboardHover': option === keyboardSelection}">
                     <span v-if="custom === false">
                         {{option}}
                     </span>
